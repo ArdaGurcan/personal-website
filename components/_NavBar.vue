@@ -1,14 +1,34 @@
+<script>
+export default {
+  data() {
+    return {
+      light: false,
+    }
+  },
+  methods: {
+    toggle() {
+      // alert(Object.keys(this.$data)
+      this.$data.light = !this.$data.light // light = !light
+    },
+  },
+}
+</script>
+
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#"></b-navbar-brand>
+    <b-navbar toggleable="lg" :type='light ? "light" :"dark"' :variant='light ? "light" :"dark"'>
+      <b-navbar-brand href="/"
+        ><img src="icon.png" alt="logo" style="width: 30px" /> Arda
+        Gürcan</b-navbar-brand
+      >
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
+          <b-nav-item href="/">Home</b-nav-item>
+          <b-nav-item href="/projects">Projects</b-nav-item>
+          <b-nav-item href="/about">About Me</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -20,25 +40,14 @@
               placeholder="Search"
             ></b-form-input>
             <b-button size="sm" class="my-2 my-sm-0" type="submit"
-              >Search</b-button
+              >Search</b-button 
             >
           </b-nav-form>
-
-          <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
-
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template #button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
+          
+          <b-nav-item>
+            <b-icon-moon-fill v-if="light" @click.prevent="toggle()"></b-icon-moon-fill>
+            <b-icon-sun-fill v-else @click.prevent="toggle()"></b-icon-sun-fill>
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
