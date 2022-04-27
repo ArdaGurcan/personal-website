@@ -16,7 +16,11 @@ export default {
 
 <template>
   <div>
-    <b-navbar toggleable="lg" :type='light ? "light" :"dark"' :variant='light ? "light" :"dark"'>
+    <b-navbar
+      toggleable="lg"
+      :type="light ? 'light' : 'dark'"
+      :variant="light ? 'light' : 'dark'"
+    >
       <b-navbar-brand href="/"
         ><img src="icon.png" alt="logo" style="width: 30px" /> Arda
         Gürcan</b-navbar-brand
@@ -40,12 +44,15 @@ export default {
               placeholder="Search"
             ></b-form-input>
             <b-button size="sm" class="my-2 my-sm-0" type="submit"
-              >Search</b-button 
+              >Search</b-button
             >
           </b-nav-form>
-          
+
           <b-nav-item>
-            <b-icon-moon-fill v-if="light" @click.prevent="toggle()"></b-icon-moon-fill>
+            <b-icon-moon-fill
+              v-if="light"
+              @click.prevent="toggle()"
+            ></b-icon-moon-fill>
             <b-icon-sun-fill v-else @click.prevent="toggle()"></b-icon-sun-fill>
           </b-nav-item>
         </b-navbar-nav>
