@@ -1,14 +1,23 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'personal-website',
+    title: 'Arda Gürcan',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/icon.png',
+      },
+      { rel: 'icon', sizes: '32x32', href: '/icon.png' },
+      { rel: 'icon', sizes: '16x16', href: '/icon.png' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -51,6 +60,13 @@ export default {
     manifest: {
       lang: 'en',
     },
+    // icon: {
+
+    // }
+  },
+
+  bootstrapVue: {
+    icons: true,
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
