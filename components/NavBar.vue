@@ -83,7 +83,6 @@ export default {
 
 svg#drip {
   transform-origin: 0 0;
-  transform: scale(1.2, 0.05);
   pointer-events: all;
 }
 </style>
