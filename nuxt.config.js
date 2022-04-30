@@ -60,9 +60,9 @@ export default {
     manifest: {
       lang: 'en',
     },
-    // icon: {
-
-    // }
+    icon: {
+      source: '~/static/icon.png',
+    },
   },
 
   bootstrapVue: {
