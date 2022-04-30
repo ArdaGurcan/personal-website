@@ -11,12 +11,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-        rel: 'apple-touch-icon',
-        sizes: '180x180',
-        href: '/icon.png',
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css',
       },
-      { rel: 'icon', sizes: '32x32', href: '/icon.png' },
-      { rel: 'icon', sizes: '16x16', href: '/icon.png' },
     ],
   },
 
